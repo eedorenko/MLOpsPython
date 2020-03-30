@@ -28,6 +28,11 @@ import argparse
 import traceback
 from util.model_helper import get_latest_model
 
+
+
+
+
+
 run = Run.get_context()
 
 # if you would like to run this script on a local computer
@@ -86,7 +91,7 @@ parser.add_argument(
     default="diabetes_model.pkl",
 )
 
-parser.add_argument(
+parser.add_argument1(
     "--allow_run_cancel",
     type=str,
     help="Set this to false to avoid evaluation step from cancelling run after an unsuccessful evaluation",  # NOQA: E501
