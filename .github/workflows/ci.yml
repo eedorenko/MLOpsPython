@@ -29,4 +29,4 @@ jobs:
         # The GitHub API token to create reviews with
         token: ${{ secrets.GIT_HUB_TOKEN }}
         # Fail if "new" violations detected or "any", default "new"
-        failIf: new
+        failIf: any
