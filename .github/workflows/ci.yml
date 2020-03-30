@@ -23,7 +23,7 @@ jobs:
       run: flake8 --output-file=lint-testresults.xml --format junit-xml
 
     # Runs Linting
-    - name: Run a multi-line scriptsteps:
+    - name: Run a multi-line scriptsteps
       uses: grantmcconnaughey/lintly-flake8-github-action@v1.0
       with:
         # The GitHub API token to create reviews with
