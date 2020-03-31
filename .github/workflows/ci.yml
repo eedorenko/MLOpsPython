@@ -24,7 +24,7 @@ jobs:
     
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
-      if: always
+      if: always()
       with:
         # Artifact name
         name: Linting-report
