@@ -20,8 +20,13 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run lint tests
-      run: flake8 
-
+      run: flake8 --output-file=lint-testresults.xml --format junit-xml
+    
+    - uses: ashley-taylor/junit-report-annotations-action@v1.0
+      if: always()
+      with:
+        access-token: ${{ secrets.GITHUB_TOKEN }}
+        path: lint-testresults.xml
     # Runs Linting
     # - name: Run a multi-line scriptsteps
     #   uses: grantmcconnaughey/lintly-flake8-github-action@v1.0
