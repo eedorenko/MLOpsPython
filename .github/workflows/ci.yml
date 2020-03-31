@@ -22,11 +22,20 @@ jobs:
     - name: Run lint tests
       run: flake8 --output-file=lint-testresults.xml --format junit-xml
     
-    - uses: ashley-taylor/junit-report-annotations-action@v1.0
-      if: always()
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      if: always
       with:
-        access-token: ${{ secrets.GITHUB_TOKEN }}
+        # Artifact name
+        name: Linting-report
+        # Directory containing files to upload
         path: lint-testresults.xml
+
+    # - uses: ashley-taylor/junit-report-annotations-action@v1.0
+    #   if: always()
+    #   with:
+    #     access-token: ${{ secrets.GITHUB_TOKEN }}
+    #     path: lint-testresults.xml
     # Runs Linting
     # - name: Run a multi-line scriptsteps
     #   uses: grantmcconnaughey/lintly-flake8-github-action@v1.0
